@@ -1,0 +1,633 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Martin Senécal - Portfolio</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="64ce6484-1d00-483f-b7d6-a80db231020d" class="page mono"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/nasa_earth_grid.jpg" style="object-position:center 33.53%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="Martin%20Sene%CC%81cal%20-%20Portfolio%208eee92e4023d4b4f80bf34aaeeb43c88/48085603735647a3c2f324d7d005a57a-sticker.png"/></div><h1 class="page-title">Martin Senécal - Portfolio</h1></header><div class="page-body"><p id="90e20c05-e667-4e20-9a2e-c512bf4bd03e" class="">
+</p><blockquote id="efd66a72-45e2-45c9-af4a-47ad1c160221" class="">I&#x27;m a software engineering student (co-op) based in Canada 🇨🇦 with 3 years of experience in the software industry. I am seeking an internship for Summer 2021. I ❤️ to learn new technologies that will help me solve complex problems. Let&#x27;s connect! </blockquote><h1 id="f536fd41-8bd3-4776-8b7d-c1be9c26d237" class="">☎️ Contact information</h1><p id="90d6e4cb-b00d-4a98-bac1-9372b6f8aaad" class="">📧 <a href="mailto:martinsenecal2000@gmail.com">martinsenecal2000@gmail.com</a></p><p id="8e20ac38-a901-4686-a429-68b27a8898e0" class="">🐱 <a href="https://github.com/martinsenecal">GitHub</a></p><p id="c2915676-e594-4c63-ba07-227f5b3ba8b3" class="">🔗 <a href="https://www.linkedin.com/in/martin-senecal/">LinkedIn</a></p><p id="af023531-7fd6-44d8-83ad-b6b782e8eead" class="">📋 My Resume: </p><figure id="8eee92e4-023d-4b4f-80bf-34aaeeb43c88"><div class="source"><a href="Martin%20Sene%CC%81cal%20-%20Portfolio%208eee92e4023d4b4f80bf34aaeeb43c88/Martin-Resume.pdf">https://s3-us-west-2.amazonaws.com/secure.notion-static.com/36e9056c-8f67-4d86-9fdc-16fd88b2c35b/Martin-Resume.pdf</a></div></figure><hr id="b532a075-c971-4930-886c-906422d65470"/><h1 id="cedbf620-c549-4bc5-8ab8-839ef378556b" class="">📚 Education</h1><h2 id="35206a98-11c9-4852-a9e2-59894ed6f201" class=""><strong>Bachelor&#x27;s Degree in Software Engineering (Co-op)</strong></h2><p id="22a5628a-7c03-41ff-8822-7c1d5cb89c5c" class="block-color-gray"><strong><em>Concordia University</em></strong><em>, Montreal</em> <em>– (2019 -</em> <em>2023)</em></p><p id="57697319-0e9e-4849-ad56-18a0bf7146a0" class="">‣ GPA: 3.92/4.3</p><p id="f1dadc6e-08f7-4d79-a0ae-ce6adfcb25ed" class="">‣ Member of the Institute for Co-operative Education</p><p id="92493320-cea0-45ee-9836-849109687e1c" class="">‣ Relevant Courses: Data Structures and Algorithms, Object-Oriented Programming, Discrete Mathematics, Web Programming, and System-Hardware.</p><hr id="bf7983ec-fc70-4c6b-85f1-a846c25b4e3d"/><h2 id="46b8aa5e-2193-4a93-a379-6cb47e1cbea5" class=""><strong>DEC in Computer Science</strong></h2><p id="5715c5cd-03e4-488f-ae8e-edbe1ce2e589" class="block-color-gray"><strong><em>Collège Bois-de-Boulogne</em></strong><em>, Montreal</em> <em>– (2017 -</em> <em>2019)</em></p><p id="054549a2-f443-40d3-8392-013008e7842a" class="">‣ R-Score: 32.2 (~85%)</p><p id="4dabec2f-e1fa-4afd-929e-2e51a3df47de" class="">‣ Awarded a Scholarship for Academic Commitment</p><hr id="70f96879-ee3c-4a79-995f-ef1d8c4882f6"/><h1 id="3904472b-cd8b-4474-8535-1b0b91e0f119" class="">🧰 Work Experience</h1><h2 id="221f00ac-ad4b-4369-9116-d3f797129052" class="">Cloud Computing Software Developer Intern</h2><p id="2077132d-b44b-4777-b0bb-53701f2ed059" class="block-color-gray"><em><strong>Genetec</strong></em><em>, Montreal – (September - December 2020)</em></p><p id="0dae48fd-871b-4c43-bbc1-99906b71cda3" class="">‣ Developed a new screenshot capability feature inside a video player, where the image will be added as new evidence in the system, improving Clearance&#x27;s UX.</p><p id="b1aa3572-b2ec-4a36-a222-84449d5fb83d" class="">‣ Debugged more than 15 frontend and backend issues on different Azure microservices, which led to a better customer experience.</p><p id="9e590f62-0e99-4a0a-8cfd-5b06d1579ac9" class="">‣ Participated actively in agile project management meetings with a team of engineers, quality assurance workers, and project managers.</p><p id="d012cac5-f725-4bea-bbf8-743d80f42cd5" class="">‣ <strong>Tech Stack</strong>: C#, Microsoft Azure, TypeScript (React.js), HTML/CSS, Microservices</p><hr id="a10ae95e-9fff-47a3-aa2b-77e1d014dc1b"/><h2 id="d14f7e66-0717-4d1e-95a8-69776632adbc" class="">Business Intelligence Developer Intern</h2><p id="0e9cc216-7575-40f9-808f-c9a59ed36ce9" class="block-color-gray"><em><strong>Ciena</strong></em><em>, Montreal – (May - August 2019)</em></p><p id="9132e387-9170-4663-a039-9e64003421cc" class="">‣ Worked on existing projects by assisting with data normalization and tool development by building PowerBI reports for internal customers.</p><p id="1f6c658c-ca9c-4f6c-aca1-e7e7693ddcb0" class="">‣ Led the development of an upcoming new internal machine learning application to process the supplier&#x27;s contract files faster with OCR technologies to analyze the data.</p><p id="94461a7d-d97f-4166-8492-11594fb1ded9" class="">‣ <strong>Tech Stack</strong>: AWS (Textract, S3), IBM Watson, Python, Alteryx, and PowerBI.</p><hr id="023c1de5-4254-4e59-869e-ab1a77193b6b"/><h2 id="9abe95af-ce94-4fd9-a755-5451f7cbf03e" class="">Video Director</h2><p id="5077358f-77be-4d85-b280-098b0638dba3" class="block-color-gray"><em><strong>Self Employed</strong></em><em>, Montreal – (October 2013 - December 2018)</em></p><p id="b572a190-9b71-475a-b736-283c68bec582" class=""><a href="https://www.youtube.com/playlist?list=PL-yR4TJNG_3jbudY21DvddcPtceDmYIKc">My Movies</a></p><p id="7a146edd-48d8-4a2b-a432-fa5fe4556de8" class="">‣ Produced a documentary by filming people across Quebec, led a crowdfunding campaign, and organized a premiere.</p><p id="e67cf9f8-a99c-4013-8093-92d35ecafbc8" class="">‣ Directed an award-winning short film while leading a team of 6 people.</p><p id="a2d86326-7148-429b-b1a4-f1f106ec05dd" class="">‣ Filmed promotional videos for Desjardins, Ministry of Education, and more.</p><hr id="6f7f70e3-1be5-44d2-b244-fe6d78233349"/><h1 id="c248b4f0-d15b-4ae6-96cf-c173b4dd6f9f" class="">🚧 Projects</h1><h2 id="bbf34267-3c71-4b81-ad1c-6fdad8920e36" class=""><a href="https://github.com/martinsenecal/CodeJam2020"><strong>Dinner Plans</strong></a></h2><p id="ff03db84-53ce-463a-8c3f-c2bf996f06be" class="block-color-gray"><strong><em>McGill CodeJam</em></strong><em>, Montreal</em> <em>– (November 2020)</em></p><p id="b8838011-5bdc-44bf-a2ce-7a718ab812bd" class="">‣ Created a game to help users choose a restaurant from Google Places API</p><p id="032fa504-4adc-4076-9686-90ba5f9c8036" class="">‣ Implemented the backend with different APIs and matching algorithms.</p><p id="0f7e90db-5f18-47bb-b4fd-b794b56afb05" class="">‣ <strong>Tech Stack</strong>: Node.js, React.js, Bootstrap, Google Cloud Platform, and MongoDB.</p><figure id="dd9a017e-f1ba-4e20-9bc9-6dd9bc113466" class="image"><a href="Martin%20Sene%CC%81cal%20-%20Portfolio%208eee92e4023d4b4f80bf34aaeeb43c88/Untitled_design.png"><img style="width:672px" src="Martin%20Sene%CC%81cal%20-%20Portfolio%208eee92e4023d4b4f80bf34aaeeb43c88/Untitled_design.png"/></a></figure><hr id="d1add94a-196b-4323-b176-a2f90837da4b"/><h2 id="a5d18ef2-9550-4862-812f-99d0f8a40ab5" class=""><a href="https://github.com/martinsenecal/MERN-Social-Network">Social Network for Developers</a></h2><p id="a805080b-87ee-4185-b3f5-e6769177b5ed" class="block-color-gray"><strong><em>Personal Project</em></strong><em>, Montreal</em> <em>– (October 2020)</em></p><p id="3147be8e-e814-4450-ad98-8de04799a0e8" class="">‣ Built an in-depth full-stack social network.</p><p id="14e198d5-5d76-470a-94e2-7facd822ce7d" class="">‣ Integrated React with an extensive backend API.</p><p id="43dc2c35-ef6c-4c5f-b2e7-1c3016b94197" class="">‣ <strong>Tech Stack</strong>: Node.js, Express, React, Redux, and MongoDB.</p><figure id="9478947c-fd58-4011-ab32-fc951fbbee6b" class="image"><a href="Martin%20Sene%CC%81cal%20-%20Portfolio%208eee92e4023d4b4f80bf34aaeeb43c88/Untitled_design_(1).png"><img style="width:1350px" src="Martin%20Sene%CC%81cal%20-%20Portfolio%208eee92e4023d4b4f80bf34aaeeb43c88/Untitled_design_(1).png"/></a></figure><hr id="0cb51a1f-492f-4fe2-9676-8cadbaf0f3ac"/><h2 id="7c1f074b-3e01-4826-a9fd-3b919a7abace" class=""><a href="https://github.com/martinsenecal/Martin-Software-Portfolio">Web Portfolio (Version 1)</a></h2><p id="878cd333-66d4-47e4-bb8f-20a4bd9bc0b7" class="block-color-gray"><em><strong>School Project</strong></em><em>, Montreal</em> <em>– (March 2020)</em></p><p id="1a125f81-8d35-45fa-aa66-582f96296f86" class="">‣ Built a dynamic web application that contains features such as login, blog, and admin tools while using a database.</p><p id="cac71323-0cec-4d8d-8049-d2cf02d10c71" class="">‣ <strong>Tech Stack</strong>: Flask (Python), JavaScript, HTML, Bootstrap, and SQLite.</p><p id="a7cdb408-037b-4a17-a1e3-3968f0f43143" class="">
+</p><figure id="cdd85465-1cfb-4e0b-bd77-440f2ada227e" class="image"><a href="Martin%20Sene%CC%81cal%20-%20Portfolio%208eee92e4023d4b4f80bf34aaeeb43c88/demo1.gif"><img style="width:600px" src="Martin%20Sene%CC%81cal%20-%20Portfolio%208eee92e4023d4b4f80bf34aaeeb43c88/demo1.gif"/></a></figure><p id="6b23a9c1-4823-40b6-a354-2e2833a9b50c" class="">
+</p><hr id="17a99dda-6b4d-4652-8738-8ffad55fa0af"/><h2 id="655e1bfd-5640-4365-883d-1b9116e43bf4" class=""><a href="https://github.com/martinsenecal/bloom-collaborative-platform">Bloom</a></h2><p id="db9f8508-c445-4d30-80d0-ccbdb74905f6" class="block-color-gray"><strong><em>Personal Project</em></strong><em>, Montreal</em> <em>– (January - November 2019)</em></p><p id="143b0cef-7813-4ccc-96d1-950f4d6b9930" class="">‣ Created a website that helps students communicate with each other for projects.</p><p id="898b91f8-af6c-4f7a-8642-6e2391851b1f" class="">‣ Used software engineering skills such as creating Gantt diagram &amp; UML.</p><p id="895bd7cb-cfb5-4954-9646-0707ad98a44c" class="">‣ <strong>Tech Stack</strong>: Meteor.js, HTML/CSS.</p><hr id="a5c0e08b-5f80-4ffc-bb58-3087367a9a9b"/><h2 id="ff5c8442-b573-4e1f-94c4-48b89a76dff3" class=""><a href="https://github.com/martinsenecal/ReviewBot-YaleHack">ReviewBot</a></h2><p id="27a45b81-6d60-4a8e-ae4f-eda63968d026" class="block-color-gray"><strong><em>Yale Hack</em></strong><em>, Connecticut, USA – (October 2019)</em></p><p id="54d878a9-19c2-44b5-b32c-1c696b8d5045" class="">‣ Built a web application that compiles customer feedback for a given business in a specific location.</p><p id="a5e3710c-7a55-4867-8cd3-e359a94663a5" class="">‣ <strong>Tech Stack</strong>: Google Cloud Platform (for Natural Language Processing API), Node.js, and HTML5/CSS.</p><hr id="178866ec-baf4-4a24-bd5e-41abd8fffbd9"/><h2 id="20a360ef-9f67-4d5f-963c-f884df456428" class=""><a href="https://github.com/martinsenecal/Handshake-HackTheNorth-Waterloo-">Handshake</a></h2><p id="cdc8da22-b556-49b9-9abe-bbfbe3f7cc8b" class="block-color-gray"><strong><em>Hack The North</em></strong><em>, UWaterloo</em> <em>– (September 2019)</em></p><hr id="8aae5f51-2dae-4328-83f0-0acf12e16fb8"/><h1 id="6c0ac2c4-4989-472f-bdfe-6f94246b408f" class="">🚀 Extracurriculars</h1><h2 id="d33200fd-3c5c-47e1-8bf6-d15ffd8c2a43" class="">Sponsorship Director</h2><p id="aab38b2b-3a48-474a-9b71-39cf853afddb" class="block-color-gray"><strong><em>HackConcordia</em></strong><em>, Montreal – (October 2019 - May 2020)</em></p><p id="a49db4be-00c4-4e49-871a-0a04aeb0e03b" class="">‣ Worked with a team of 20 students to create the biggest hackathon in Montreal and raised a total of $115 000 through company outreach.</p><p id="8280df24-c87f-4ddf-8a01-9d20a1aa1c4e" class="">‣ Ensured that the companies extracted value from the experience.</p><hr id="ea346744-64ed-40d1-8534-b6044a069f1c"/><h2 id="bcbb7fe0-deb0-4587-a9be-6e791643c6d9" class="">Creation of a Hackerspace</h2><p id="d78b50b2-8f2c-464c-af76-9f14f27bfa41" class="block-color-gray"><strong><em>Fabrique Beaubois</em></strong><em>, Montreal – (September 2016 - June 2017)</em></p><p id="90d9f142-65a9-4c99-a92e-03e21d945cef" class="">‣ Joined a committee of 18 people to set up a physical space where people shared their interest in technology, worked on their projects and learned from each other.</p><hr id="807c03ec-23b6-41a1-9948-5142570f1214"/><h1 id="d574e1e6-a69d-4660-bee3-9a2d243a6ab0" class="">🛠 Skills</h1><h2 id="308a0f5d-df00-48b9-855f-e8a71bc6d10c" class="">💻 Technical Skills</h2><div id="6b7b5005-8db1-412b-906f-84b4376d8a07" class="column-list"><div id="49e461ba-b638-466b-b6dc-cf331da83fc4" style="width:50%" class="column"><h3 id="6decb6d8-14da-41b5-88bf-8343955a6075" class="">Programming Languages</h3><p id="7d13c258-b558-4faf-9a5d-d8f65edd83b7" class="">Java</p><p id="f6e725be-7049-42cf-8ab7-6307154b2864" class="">JavaScript (React.js, Node.js)</p><p id="082adcbb-b613-4a2b-bbf4-a85e3f3eb7a1" class="">C#</p><p id="0e15ce54-11a9-4974-a9ba-491f17d35e64" class="">HTML5</p><p id="ce7be48e-54fc-4aa6-9872-5c2396778e7c" class="">CSS</p><p id="d8f2a901-150d-42df-942c-d5ab620c14cb" class="">Python (Flask)</p><p id="4f507f15-f949-44dc-8b62-a290ddcc3e8f" class="">TypeScript</p></div><div id="a2821d0e-1c21-4e28-a025-f13e46b1da23" style="width:50%" class="column"><h3 id="8e6c77d0-97d1-4e2b-be58-5e2465561dc5" class="">Tools</h3><p id="7137753b-67f7-44cf-bacd-f8c2f4917e37" class="">Azure</p><p id="cffe39ed-d8aa-43d4-bf30-3dbc2b358ef7" class="">Google Cloud Platform</p><p id="62289aab-bf39-47e5-aae2-25d9605e24d7" class="">AWS</p><p id="41eb04b2-31b7-425e-a0ac-fe43c9435877" class="">IBM Watson</p><p id="f8c86f9d-deed-4d10-9625-729973ad0c64" class="">Git</p><p id="5c4f2fe5-0ec9-4069-a837-27b7547ec2c4" class="">MongoDB</p><p id="e996f32a-29e5-4aff-860a-775abce49040" class="">Agile</p></div></div><hr id="6a76ded8-6dfc-48e5-95b3-743e8fd20717"/><h2 id="dd2e1b4b-d790-4dd8-a91a-88afe2247bbc" class="">👥 Soft Skills</h2><div id="72778ea9-e63b-4d82-b52f-0bc85f01be43" class="column-list"><div id="5053a4f7-57d4-4049-a300-1de69a16fddc" style="width:50%" class="column"><h3 id="8fc7511b-3132-4b16-afbd-fb70b693ed4d" class="">Initiative</h3></div><div id="65356c84-45d6-415a-9e92-8532fdf13e47" style="width:50%" class="column"><h3 id="0ea80d41-0ea7-4647-bfad-1de1dc187f62" class="">Leadership</h3></div></div><div id="7f17233d-7399-4ec4-bd0f-2bc2682097e5" class="column-list"><div id="1aa8c99c-bb74-49af-be58-0345114bf578" style="width:50%" class="column"><h3 id="db01402e-41e5-44e9-b40c-2195ab3d6d00" class="">Organization</h3></div><div id="52915a9b-b674-447e-a74a-472786792454" style="width:50%" class="column"><h3 id="9ed25c2e-fe72-4448-9032-440b4e54b421" class="">Creativity</h3></div></div><div id="b0540835-d6cd-4867-80bc-115305623605" class="column-list"><div id="94ff4c18-7021-4093-bf43-3729546fdeb7" style="width:50%" class="column"><h3 id="71157994-eab0-4090-bfc4-5c1609d34fbe" class="">Discipline</h3></div><div id="59f9931a-4c1a-4570-88e3-99cf0836cd93" style="width:50%" class="column"><h3 id="9cb7ff35-005d-42f4-8471-666625dc7b8f" class="">Project Management</h3></div></div><hr id="fac2df04-f033-4949-b2cc-9be8a4a4ebf2"/><h2 id="7fc9f5a3-073c-4653-adf7-2f97bad45b65" class="">🗣 Languages</h2><div id="f696b7e2-38c0-4a93-b2b0-242ddf74e0ba" class="column-list"><div id="2e669c81-051c-4f0b-84c6-845f6539ca2e" style="width:33.33333333333333%" class="column"><h3 id="02879ca5-9c75-4ef9-a882-cbd9a2763532" class="">English 🇬🇧 🇺🇸</h3><p id="55b593b1-37c4-4238-af82-46016dd5e501" class="">Bilingual proficiency</p></div><div id="f141e3b4-072b-4f75-bb56-dac6d32a5820" style="width:33.33333333333333%" class="column"><h3 id="13221a3a-da3f-4291-9851-44b0bf361ea6" class="">French 🇫🇷 🇨🇦</h3><p id="0787571b-be18-48d4-8692-5c736d5670f4" class="">Native speaker</p></div><div id="7fd17e10-03d4-4998-ad04-f3586a1495a7" style="width:33.33333333333333%" class="column"><h3 id="d9e61a49-7194-41df-a822-772f8a79b3cb" class="">Spanish 🇪🇸🇦🇷</h3><p id="13d356aa-1ef0-4304-93d7-2b1ff21e080a" class="">Elementary proficiency</p></div></div><hr id="d881727a-7e51-4ad5-bffe-22df70851a8c"/><h1 id="fbab687c-7392-4379-b513-52e3b9525588" class="">📌 Additional Courses</h1><h2 id="f09c6afb-7b84-47b3-8869-c639b50139c0" class=""><strong>Beginning Project Management (Certificate)</strong></h2><p id="16d2b778-e7f9-4b18-9f34-7fdafa58d301" class="block-color-gray"><strong><em>Udemy</em></strong><em>, Online</em> <em>– (December 2020)</em></p><hr id="fb1c1272-988d-49f0-85db-e7c8a7252a7a"/><h2 id="6a767467-7482-478e-b2f6-95388195c836" class="">Startup School: Future Founder <strong>(Certificate)</strong></h2><p id="250fe592-c91b-4a82-ab97-ec5dc8a74373" class="block-color-gray"><em><strong>YCombinator</strong></em><em>, Online</em> <em>– (November - December 2020)</em></p><hr id="e96157f9-e434-47fb-80ff-135d751cb393"/><h2 id="1645db7c-d89a-4938-9f1d-32ecadca34d8" class=""><strong>MERN Stack Front to Back (Certificate)</strong></h2><p id="4a66cde8-097a-4f0c-ae1f-d276e482b047" class="block-color-gray"><strong><em>Udemy</em></strong><em>, Online</em> <em>– (October - November 2020)</em></p><hr id="5b71a0c2-ef34-46a6-88cd-b0c0b8e54167"/><p id="9cf5eb51-a9d8-4aea-8350-ddfd67a5ad6a" class="">
+</p><p id="1bfa7172-6834-4860-a3ce-dd2ecc4bf422" class="">
+</p><p id="56c03397-dc9c-4872-ae41-ac808cb12df3" class="">                         © Martin Senécal 2021</p><p id="2d7b585d-d576-4bd4-89eb-e27d684b0266" class="">
+</p></div></article></body></html>
